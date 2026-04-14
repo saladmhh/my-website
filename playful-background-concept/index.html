@@ -1,0 +1,866 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Alexander Holtti - Playful Background Concept</title>
+    <meta
+      name="description"
+      content="Et mere legende farvekoncept for Alexander Holttis social-first videoside."
+    />
+    <style>
+      :root {
+        --ink: #151515;
+        --paper: #fffdf8;
+        --white: #ffffff;
+        --lime: #53f06f;
+        --pink: #ff4f9f;
+        --cyan: #34c8ff;
+        --sun: #ffe34f;
+        --coral: #ff6248;
+        --line: rgba(21, 21, 21, 0.14);
+        --muted: rgba(21, 21, 21, 0.66);
+        --radius: 8px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background:
+          radial-gradient(circle at 9% 12%, rgba(255, 79, 159, 0.48) 0 12rem, transparent 12.2rem),
+          radial-gradient(circle at 92% 9%, rgba(52, 200, 255, 0.52) 0 14rem, transparent 14.2rem),
+          radial-gradient(circle at 80% 76%, rgba(83, 240, 111, 0.42) 0 16rem, transparent 16.3rem),
+          linear-gradient(135deg, rgba(255, 227, 79, 0.44), transparent 28%),
+          var(--paper);
+        color: var(--ink);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -2;
+        background-image:
+          linear-gradient(rgba(21, 21, 21, 0.055) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(21, 21, 21, 0.055) 1px, transparent 1px);
+        background-size: 44px 44px;
+        mask-image: linear-gradient(180deg, black 0%, rgba(0, 0, 0, 0.4) 72%, transparent 100%);
+      }
+
+      body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background:
+          linear-gradient(120deg, transparent 0 31%, rgba(255, 255, 255, 0.72) 31% 38%, transparent 38%),
+          linear-gradient(58deg, transparent 0 62%, rgba(255, 98, 72, 0.24) 62% 70%, transparent 70%);
+        pointer-events: none;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      .shell {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        border-bottom: 1px solid rgba(21, 21, 21, 0.12);
+        background: rgba(255, 253, 248, 0.76);
+        backdrop-filter: blur(20px);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 14px 0;
+      }
+
+      .brand {
+        display: grid;
+        gap: 3px;
+        line-height: 1;
+      }
+
+      .brand strong {
+        font-size: 16px;
+        font-weight: 950;
+      }
+
+      .brand span {
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        font-size: 14px;
+        font-weight: 900;
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 48px;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid var(--ink);
+        border-radius: var(--radius);
+        background: var(--ink);
+        color: var(--white);
+        padding: 0 20px;
+        font-size: 14px;
+        font-weight: 950;
+        box-shadow: 5px 5px 0 var(--pink);
+        transition:
+          transform 160ms ease,
+          box-shadow 160ms ease,
+          background 160ms ease;
+      }
+
+      .button:hover {
+        transform: translate(2px, 2px);
+        box-shadow: 2px 2px 0 var(--pink);
+      }
+
+      .button.light {
+        background: var(--white);
+        color: var(--ink);
+        box-shadow: 5px 5px 0 var(--cyan);
+      }
+
+      .hero {
+        position: relative;
+        display: grid;
+        min-height: calc(100svh - 77px);
+        align-items: center;
+        padding: 58px 0 76px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(320px, 430px);
+        gap: 54px;
+        align-items: center;
+      }
+
+      .sticker {
+        display: inline-flex;
+        align-items: center;
+        border: 2px solid var(--ink);
+        border-radius: var(--radius);
+        background: var(--sun);
+        padding: 8px 12px;
+        font-size: 13px;
+        font-weight: 950;
+        text-transform: uppercase;
+        box-shadow: 4px 4px 0 var(--ink);
+        transform: rotate(-2deg);
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        max-width: 760px;
+        margin-top: 24px;
+        font-size: clamp(54px, 8.6vw, 112px);
+        font-weight: 950;
+        line-height: 0.86;
+      }
+
+      .color-word {
+        display: inline-block;
+        color: var(--pink);
+        text-shadow: 3px 3px 0 var(--sun);
+      }
+
+      .hero-copy {
+        max-width: 620px;
+        margin-top: 28px;
+        color: rgba(21, 21, 21, 0.72);
+        font-size: clamp(18px, 2vw, 22px);
+        font-weight: 650;
+        line-height: 1.55;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 34px;
+      }
+
+      .portrait-card {
+        position: relative;
+        isolation: isolate;
+        min-height: 560px;
+      }
+
+      .portrait-card::before,
+      .portrait-card::after {
+        content: "";
+        position: absolute;
+        border: 2px solid var(--ink);
+        border-radius: var(--radius);
+        z-index: -1;
+      }
+
+      .portrait-card::before {
+        inset: 34px -18px -18px 24px;
+        background: var(--cyan);
+      }
+
+      .portrait-card::after {
+        inset: -18px 26px 42px -18px;
+        background: var(--lime);
+      }
+
+      .portrait {
+        position: absolute;
+        inset: 0;
+        border: 2px solid var(--ink);
+        border-radius: var(--radius);
+        background: var(--white);
+        overflow: hidden;
+        box-shadow: 10px 10px 0 var(--ink);
+      }
+
+      .portrait img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 58% 22%;
+      }
+
+      .floating-note {
+        position: absolute;
+        right: -12px;
+        bottom: 36px;
+        z-index: 2;
+        max-width: 230px;
+        border: 2px solid var(--ink);
+        border-radius: var(--radius);
+        background: var(--white);
+        padding: 16px;
+        font-size: 16px;
+        font-weight: 950;
+        line-height: 1.18;
+        box-shadow: 6px 6px 0 var(--coral);
+        transform: rotate(2deg);
+      }
+
+      .proof {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+        padding: 8px 0 84px;
+      }
+
+      .proof-card {
+        min-height: 142px;
+        border: 2px solid var(--ink);
+        border-radius: var(--radius);
+        background: var(--white);
+        padding: 20px;
+        box-shadow: 5px 5px 0 var(--ink);
+      }
+
+      .proof-card:nth-child(2) {
+        background: var(--lime);
+      }
+
+      .proof-card:nth-child(3) {
+        background: var(--sun);
+      }
+
+      .proof-card:nth-child(4) {
+        background: var(--cyan);
+      }
+
+      .proof-card b {
+        display: block;
+        font-size: clamp(30px, 4vw, 46px);
+        font-weight: 950;
+        line-height: 1;
+      }
+
+      .proof-card span {
+        display: block;
+        margin-top: 12px;
+        font-size: 14px;
+        font-weight: 850;
+        line-height: 1.35;
+      }
+
+      .section {
+        padding: 92px 0;
+      }
+
+      .panel {
+        border: 2px solid var(--ink);
+        border-radius: var(--radius);
+        background: rgba(255, 255, 255, 0.82);
+        box-shadow: 8px 8px 0 var(--ink);
+        backdrop-filter: blur(8px);
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 52px;
+        padding: 42px;
+      }
+
+      .kicker {
+        margin-bottom: 16px;
+        color: var(--pink);
+        font-size: 13px;
+        font-weight: 950;
+        text-transform: uppercase;
+      }
+
+      h2 {
+        font-size: clamp(36px, 5.4vw, 72px);
+        font-weight: 950;
+        line-height: 0.94;
+      }
+
+      .lead {
+        color: rgba(21, 21, 21, 0.72);
+        font-size: clamp(18px, 2vw, 21px);
+        font-weight: 650;
+        line-height: 1.6;
+      }
+
+      .method {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+        margin-top: 24px;
+      }
+
+      .method-card {
+        min-height: 210px;
+        border: 2px solid var(--ink);
+        border-radius: var(--radius);
+        background: var(--white);
+        padding: 20px;
+        box-shadow: 5px 5px 0 var(--ink);
+      }
+
+      .method-card:nth-child(1) {
+        background: #ffe8f3;
+      }
+
+      .method-card:nth-child(2) {
+        background: #e7fbff;
+      }
+
+      .method-card:nth-child(3) {
+        background: #eeffe9;
+      }
+
+      .method-card:nth-child(4) {
+        background: #fff5bd;
+      }
+
+      .method-card span {
+        color: var(--pink);
+        font-size: 13px;
+        font-weight: 950;
+      }
+
+      .method-card p {
+        margin-top: 66px;
+        font-size: 20px;
+        font-weight: 950;
+        line-height: 1.15;
+      }
+
+      .services {
+        background: var(--ink);
+        color: var(--white);
+        clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+      }
+
+      .services .section {
+        padding: 122px 0;
+      }
+
+      .services .kicker {
+        color: var(--lime);
+      }
+
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        margin-top: 44px;
+      }
+
+      .service-card {
+        min-height: 292px;
+        border: 2px solid rgba(255, 255, 255, 0.92);
+        border-radius: var(--radius);
+        padding: 24px;
+      }
+
+      .service-card:nth-child(1) {
+        background: var(--pink);
+      }
+
+      .service-card:nth-child(2) {
+        background: var(--cyan);
+        color: var(--ink);
+      }
+
+      .service-card:nth-child(3) {
+        background: var(--lime);
+        color: var(--ink);
+      }
+
+      .service-card .num {
+        display: inline-flex;
+        border: 2px solid currentColor;
+        border-radius: var(--radius);
+        padding: 6px 9px;
+        font-size: 13px;
+        font-weight: 950;
+      }
+
+      .service-card h3 {
+        margin-top: 72px;
+        font-size: 32px;
+        font-weight: 950;
+        line-height: 0.98;
+      }
+
+      .service-card p {
+        margin-top: 18px;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.55;
+      }
+
+      .logos {
+        display: grid;
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 32px;
+        align-items: center;
+      }
+
+      .logo-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .logo-cell {
+        display: grid;
+        min-height: 142px;
+        place-items: center;
+        border: 2px solid var(--ink);
+        border-radius: var(--radius);
+        background: var(--white);
+        padding: 28px;
+        box-shadow: 5px 5px 0 var(--ink);
+      }
+
+      .logo-cell img {
+        max-height: 66px;
+        width: min(180px, 80%);
+        object-fit: contain;
+      }
+
+      .channels {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+        margin-top: 36px;
+      }
+
+      .channel {
+        display: flex;
+        min-height: 176px;
+        flex-direction: column;
+        justify-content: space-between;
+        border: 2px solid var(--ink);
+        border-radius: var(--radius);
+        background: var(--white);
+        padding: 20px;
+        box-shadow: 5px 5px 0 var(--ink);
+        transition:
+          transform 160ms ease,
+          box-shadow 160ms ease;
+      }
+
+      .channel:hover {
+        transform: translate(2px, 2px);
+        box-shadow: 2px 2px 0 var(--ink);
+      }
+
+      .channel strong {
+        font-size: 25px;
+        font-weight: 950;
+        line-height: 1;
+      }
+
+      .channel span {
+        color: var(--pink);
+        font-size: 13px;
+        font-weight: 950;
+        text-transform: uppercase;
+      }
+
+      .cta {
+        padding: 92px 0;
+      }
+
+      .cta-box {
+        display: grid;
+        grid-template-columns: 1fr 0.62fr;
+        gap: 44px;
+        align-items: end;
+        border: 2px solid var(--ink);
+        border-radius: var(--radius);
+        background: var(--sun);
+        padding: 44px;
+        box-shadow: 10px 10px 0 var(--ink);
+      }
+
+      .cta-copy {
+        color: rgba(21, 21, 21, 0.72);
+        font-size: 19px;
+        font-weight: 700;
+        line-height: 1.56;
+      }
+
+      .email {
+        display: block;
+        margin-top: 16px;
+        font-size: 14px;
+        font-weight: 900;
+        overflow-wrap: anywhere;
+      }
+
+      @media (max-width: 900px) {
+        .nav-links a:not(.button) {
+          display: none;
+        }
+
+        .hero-grid,
+        .split,
+        .logos,
+        .cta-box {
+          grid-template-columns: 1fr;
+        }
+
+        .portrait-card {
+          min-height: 480px;
+        }
+
+        .proof,
+        .method,
+        .service-grid,
+        .channels {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .services {
+          clip-path: polygon(0 2%, 100% 0, 100% 98%, 0 100%);
+        }
+      }
+
+      @media (max-width: 560px) {
+        .shell {
+          width: min(100% - 24px, 1180px);
+        }
+
+        .nav .button {
+          min-height: 42px;
+          padding: 0 13px;
+          box-shadow: 3px 3px 0 var(--pink);
+        }
+
+        .brand strong {
+          font-size: 14px;
+        }
+
+        h1 {
+          font-size: clamp(48px, 16vw, 76px);
+        }
+
+        .hero-actions,
+        .proof,
+        .method,
+        .service-grid,
+        .logo-grid,
+        .channels {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-actions {
+          display: grid;
+        }
+
+        .button {
+          width: 100%;
+        }
+
+        .portrait-card {
+          min-height: 410px;
+        }
+
+        .floating-note {
+          right: 8px;
+          bottom: 16px;
+          max-width: 190px;
+          font-size: 14px;
+        }
+
+        .split,
+        .cta-box {
+          padding: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <nav class="shell nav" aria-label="Primær navigation">
+        <a class="brand" href="#">
+          <strong>Alexander Holtti</strong>
+          <span>Social-first video</span>
+        </a>
+        <div class="nav-links">
+          <a href="#approach">Tilgang</a>
+          <a href="#services">Services</a>
+          <a href="#work">Kanaler</a>
+          <a class="button" href="#contact">Book intro</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="shell hero-grid">
+          <div>
+            <span class="sticker">Organisk short-form for brands</span>
+            <h1>Giv feedet noget at <span class="color-word">lege</span> med.</h1>
+            <p class="hero-copy">
+              Social video skal føles levende, hurtigt aflæseligt og svært at
+              ignorere. Her får brandet et mere farverigt univers med kant,
+              tempo og tydelige hooks.
+            </p>
+            <div class="hero-actions">
+              <a
+                class="button"
+                href="mailto:alexholttibiz@gmail.com?subject=Intro%20om%20video%20content"
+              >
+                Start et samarbejde
+              </a>
+              <a class="button light" href="#approach">Se metoden</a>
+            </div>
+          </div>
+
+          <div class="portrait-card" aria-label="Alexander Holtti portræt">
+            <div class="portrait">
+              <img src="../public/profile.jpg" alt="Alexander Holtti" />
+            </div>
+            <div class="floating-note">
+              12M+ følgere på tværs af profiler og formater.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="shell proof" aria-label="Resultater">
+        <div class="proof-card">
+          <b>18+</b>
+          <span>års praktisk creator-erfaring</span>
+        </div>
+        <div class="proof-card">
+          <b>12M+</b>
+          <span>følgere på tværs af profiler</span>
+        </div>
+        <div class="proof-card">
+          <b>Mia.</b>
+          <span>organiske visninger</span>
+        </div>
+        <div class="proof-card">
+          <b>2008</b>
+          <span>første YouTube-kanal</span>
+        </div>
+      </section>
+
+      <section class="shell section" id="approach">
+        <div class="panel split">
+          <div>
+            <p class="kicker">Strategisk retning</p>
+            <h2>Et baggrundsdesign med mere puls og personlighed.</h2>
+          </div>
+          <div>
+            <p class="lead">
+              Her bliver baggrunden ikke bare en flade, men en del af brandets
+              energi. Farverne skaber tempo, de sorte konturer giver kontrol,
+              og de lyse paneler sikrer, at siden stadig føles kommercielt klar.
+            </p>
+          </div>
+        </div>
+
+        <div class="method">
+          <article class="method-card">
+            <span>01</span>
+            <p>Find formatet brandet kan eje</p>
+          </article>
+          <article class="method-card">
+            <span>02</span>
+            <p>Byg en hook der stopper scrollen</p>
+          </article>
+          <article class="method-card">
+            <span>03</span>
+            <p>Klip efter retention, ikke bare æstetik</p>
+          </article>
+          <article class="method-card">
+            <span>04</span>
+            <p>Gør videoen nem at gemme, dele eller reagere på</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="services" id="services">
+        <div class="shell section">
+          <p class="kicker">Services</p>
+          <h2>Farverigt nok til at blive husket. Stramt nok til at sælge.</h2>
+
+          <div class="service-grid">
+            <article class="service-card">
+              <span class="num">01</span>
+              <h3>Content-strategi</h3>
+              <p>
+                En klar kreativ retning for short-form, bygget på målgruppe,
+                platform og brandets naturlige stemme.
+              </p>
+            </article>
+            <article class="service-card">
+              <span class="num">02</span>
+              <h3>Produktion</h3>
+              <p>
+                Ideer, optagelse, rytme og redigering, så videoerne føles skabt
+                til feedet fra første frame.
+              </p>
+            </article>
+            <article class="service-card">
+              <span class="num">03</span>
+              <h3>Creator-sparring</h3>
+              <p>
+                Et erfarent blik på hooks, format, timing og payoffs for teams,
+                der vil løfte deres interne output.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="shell section">
+        <div class="logos">
+          <div>
+            <p class="kicker">Udvalgte samarbejder</p>
+            <h2>Brandproof med mere pop.</h2>
+          </div>
+          <div class="logo-grid" aria-label="Udvalgte brandlogos">
+            <div class="logo-cell">
+              <img src="../public/logos/coca-cola.svg" alt="Coca-Cola" />
+            </div>
+            <div class="logo-cell">
+              <img src="../public/logos/mcdonalds.svg" alt="McDonald's" />
+            </div>
+            <div class="logo-cell">
+              <img src="../public/logos/duolingo.svg" alt="Duolingo" />
+            </div>
+            <div class="logo-cell">
+              <img src="../public/logos/adobe.svg" alt="Adobe" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="shell section" id="work">
+        <p class="kicker">Kanaler</p>
+        <h2>Se bredden i universet.</h2>
+        <div class="channels">
+          <a class="channel" href="https://www.youtube.com/user/AlexHoltti" target="_blank" rel="noopener noreferrer">
+            <strong>YouTube</strong>
+            <span>Åbn profil</span>
+          </a>
+          <a class="channel" href="https://www.instagram.com/alexholtti/" target="_blank" rel="noopener noreferrer">
+            <strong>Instagram</strong>
+            <span>Åbn profil</span>
+          </a>
+          <a class="channel" href="https://www.tiktok.com/@thekittyandrea" target="_blank" rel="noopener noreferrer">
+            <strong>TikTok</strong>
+            <span>Åbn profil</span>
+          </a>
+          <a class="channel" href="https://www.instagram.com/andreavonspeed/" target="_blank" rel="noopener noreferrer">
+            <strong>Andrea Von Speed</strong>
+            <span>Åbn profil</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="shell cta" id="contact">
+        <div class="cta-box">
+          <div>
+            <p class="kicker">Næste skridt</p>
+            <h2>Lad os finde den videoidé, dit brand kan eje.</h2>
+          </div>
+          <div>
+            <p class="cta-copy">
+              Send brand, målgruppe og ambition. Så vender jeg tilbage med et
+              konkret forslag til retning, format og første sprint.
+            </p>
+            <a
+              class="button"
+              href="mailto:alexholttibiz@gmail.com?subject=Intro%20om%20video%20content"
+            >
+              Send en intro-mail
+            </a>
+            <span class="email">alexholttibiz@gmail.com</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
