@@ -95,7 +95,7 @@ export function CoverFlow({ items }: { items: MediaItem[] }) {
         <button
           onClick={() => setActiveIndex(current => Math.max(0, current - 1))}
           disabled={activeIndex === 0}
-          className="absolute left-2 sm:left-4 z-[200] flex h-14 w-14 items-center justify-center rounded-full bg-white border border-[#111]/10 shadow-sm transition hover:scale-105 hover:shadow-md disabled:opacity-50 disabled:pointer-events-none"
+          className="absolute left-2 sm:left-4 z-[200] flex h-11 w-11 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-white border border-[#111]/10 shadow-sm transition hover:scale-105 hover:shadow-md disabled:opacity-50 disabled:pointer-events-none"
           aria-label="Forrige video"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
@@ -106,7 +106,7 @@ export function CoverFlow({ items }: { items: MediaItem[] }) {
         <button
           onClick={() => setActiveIndex(current => Math.min(items.length - 1, current + 1))}
           disabled={activeIndex === items.length - 1}
-          className="absolute right-2 sm:right-4 z-[200] flex h-14 w-14 items-center justify-center rounded-full bg-white border border-[#111]/10 shadow-sm transition hover:scale-105 hover:shadow-md disabled:opacity-50 disabled:pointer-events-none"
+          className="absolute right-2 sm:right-4 z-[200] flex h-11 w-11 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-white border border-[#111]/10 shadow-sm transition hover:scale-105 hover:shadow-md disabled:opacity-50 disabled:pointer-events-none"
           aria-label="Næste video"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
@@ -116,7 +116,7 @@ export function CoverFlow({ items }: { items: MediaItem[] }) {
       </div>
 
       {/* Navigation Indicators */}
-      <div className="flex justify-center mt-10 gap-2 relative z-50">
+      <div className="flex justify-center mt-8 sm:mt-10 gap-2 relative z-50">
         {items.map((_, idx) => (
           <button
             key={idx}

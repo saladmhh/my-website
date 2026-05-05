@@ -95,11 +95,11 @@ export default function Home() {
             </span>
           </a>
 
-          <nav className="hidden md:flex items-center gap-8 text-sm font-semibold text-[#111]/60">
-            <a className="transition-colors hover:text-[#111]" href="#services">Service</a>
-            <a className="transition-colors hover:text-[#111]" href="#work">Videoer</a>
+          <nav className="flex items-center gap-4 md:gap-8 text-sm font-semibold text-[#111]/60">
+            <a className="hidden md:block transition-colors hover:text-[#111]" href="#services">Service</a>
+            <a className="hidden md:block transition-colors hover:text-[#111]" href="#work">Videoer</a>
             <a
-              className="rounded-full bg-[#111] px-6 py-2.5 text-sm font-bold text-white transition-all hover:scale-105 hover:bg-[#FF3366] hover:shadow-[0_0_20px_rgba(255,51,102,0.4)]"
+              className="rounded-full bg-[#111] px-5 py-2.5 sm:px-6 text-xs sm:text-sm font-bold text-white transition-all hover:scale-105 hover:bg-[#FF3366] hover:shadow-[0_0_20px_rgba(255,51,102,0.4)]"
               href="#contact"
             >
               Kontakt os
@@ -119,7 +119,7 @@ export default function Home() {
               </span>
             </div>
             
-            <h1 className="text-5xl font-black tracking-tight text-[#111] sm:text-7xl lg:text-[6rem] lg:leading-[0.95]">
+            <h1 className="text-4xl font-black tracking-tight text-[#111] xs:text-5xl sm:text-7xl lg:text-[6rem] lg:leading-[0.95]">
               Korte videoer.
               <br />
               <span className="relative inline-block text-[#6B9BD2]">
@@ -154,7 +154,7 @@ export default function Home() {
             <p className="text-center text-[10px] font-bold uppercase tracking-widest text-[#111]/40 mb-8">
               BRANDS VI HAR ARBEJDET MED
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-10 md:gap-24">
+            <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 md:gap-24">
               {brands.map((brand) => (
                 <div key={brand.name} className="flex justify-center transition-transform duration-300 hover:-translate-y-1 hover:scale-105">
                   <Image
