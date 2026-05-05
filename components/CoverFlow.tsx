@@ -46,7 +46,7 @@ export function CoverFlow({ items }: { items: MediaItem[] }) {
           return (
             <div
               key={index}
-              className={`absolute top-0 transition-transform duration-700 ease-out flex justify-center items-center rounded-xl overflow-hidden bg-white shadow-[8px_8px_0_#080808] border-2 border-[#080808]`}
+              className={`absolute top-0 transition-transform duration-700 ease-out flex justify-center items-center rounded-xl overflow-hidden bg-white shadow-xl border border-[#111]/10`}
               style={{
                 zIndex,
                 transform: `translateX(${translateX}%) translateZ(${-absOffset * 150}px) rotateY(${rotateY}deg) scale(${scale})`,
@@ -95,7 +95,7 @@ export function CoverFlow({ items }: { items: MediaItem[] }) {
         <button
           onClick={() => setActiveIndex(current => Math.max(0, current - 1))}
           disabled={activeIndex === 0}
-          className="absolute left-2 sm:left-4 z-[200] flex h-14 w-14 items-center justify-center rounded-full bg-white border-2 border-[#080808] shadow-[4px_4px_0_#080808] transition hover:translate-x-1 hover:translate-y-1 hover:shadow-[1px_1px_0_#080808] disabled:opacity-50 disabled:pointer-events-none"
+          className="absolute left-2 sm:left-4 z-[200] flex h-14 w-14 items-center justify-center rounded-full bg-white border border-[#111]/10 shadow-sm transition hover:scale-105 hover:shadow-md disabled:opacity-50 disabled:pointer-events-none"
           aria-label="Forrige video"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
@@ -106,7 +106,7 @@ export function CoverFlow({ items }: { items: MediaItem[] }) {
         <button
           onClick={() => setActiveIndex(current => Math.min(items.length - 1, current + 1))}
           disabled={activeIndex === items.length - 1}
-          className="absolute right-2 sm:right-4 z-[200] flex h-14 w-14 items-center justify-center rounded-full bg-white border-2 border-[#080808] shadow-[4px_4px_0_#080808] transition hover:translate-x-1 hover:translate-y-1 hover:shadow-[1px_1px_0_#080808] disabled:opacity-50 disabled:pointer-events-none"
+          className="absolute right-2 sm:right-4 z-[200] flex h-14 w-14 items-center justify-center rounded-full bg-white border border-[#111]/10 shadow-sm transition hover:scale-105 hover:shadow-md disabled:opacity-50 disabled:pointer-events-none"
           aria-label="Næste video"
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">

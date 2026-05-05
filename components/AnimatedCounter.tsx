@@ -49,7 +49,7 @@ export function AnimatedCounter({ value }: { value: string }) {
   // Hook hover on the parent metric card
   useEffect(() => {
     if (!numMatch) return;
-    const card = ref.current?.closest('.metric-card');
+    const card = ref.current?.closest('.metric-card, .stat-card');
     if (!card) return;
 
     const handleMouseEnter = () => {
