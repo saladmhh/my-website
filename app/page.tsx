@@ -311,7 +311,7 @@ export default function Home() {
               {/* Contact CTA */}
               <div className="lg:pl-8">
                 <h2 className="text-3xl font-black tracking-tight text-[#111] sm:text-5xl">
-                  Klar til et sammenarbejde?
+                  Klar til et samarbejde?
                 </h2>
                 <p className="mt-4 text-lg text-[#111]/60 font-medium mb-8">
                   Skriv til os med jeres ambitioner, så sammensætter vi en skræddersyet videopakke til jeres brand.
